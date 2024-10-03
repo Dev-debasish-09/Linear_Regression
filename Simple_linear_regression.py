@@ -18,3 +18,19 @@ class LinearRrg:
     def predict(self,X_test):
         print(X_test)
         return self.m*X_test+self.b
+
+    def mean_abs_error(self,y_test,y_pred):
+        e = np.array(y_test)
+        f = np.array(y_pred)
+        c = 0
+        for i in range(len(y_test)):
+          c +=  np.abs(e[i] - f[i])
+        return c/len(y_test)
+
+  def mean_squared_error(self,y_test,y_pred):
+        e = np.array(y_test)
+        f = np.array(y_pred)
+        c = 0
+        for i in range(len(y_test)):
+          c +=  np.abs((e[i] - f[i])**2)
+        return c/len(y_test)
